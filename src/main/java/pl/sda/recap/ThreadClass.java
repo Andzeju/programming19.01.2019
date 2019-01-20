@@ -1,8 +1,8 @@
 package pl.sda.recap;
 
 public class ThreadClass implements Runnable {
-    String name;
-    int numberOfRepeats;
+    private final String name;
+    private final int numberOfRepeats;
 
 
     public ThreadClass(String name, int numberOfRepeats) {
@@ -11,10 +11,13 @@ public class ThreadClass implements Runnable {
     }
 
     public void run() {
-        int i = 1;
-        while (i <= numberOfRepeats) {
-            System.out.println("Hello from thread named " + this.name + " for " + i + " time");
-            i++;
+//        int i = 1;
+//        while (i <= numberOfRepeats) {
+//            System.out.println("Hello from thread named " + this.name + " for " + i + " time");
+//            i++;
+//        }
+        for (int i = 0; i < numberOfRepeats; i++) {
+            System.out.println("Hello from thread named " + this.name + " for " + (i + 1) + " time");
         }
     }
 
